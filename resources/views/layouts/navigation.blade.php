@@ -18,15 +18,21 @@
                     <x-nav-link :href="route('introduction')" :active="request()->routeIs('introduction')">
                         Introduction
                     </x-nav-link>
+                    <x-nav-link :href="route('database')" :active="request()->routeIs('database')">
+                        Database
+                    </x-nav-link>
+                    <x-nav-link :href="route('forum')" :active="request()->routeIs('forum')">
+                        Forum
+                    </x-nav-link>
                     @auth
                         <x-nav-link :href="route('user')" :active="request()->routeIs('user')">
                             User
                         </x-nav-link>
-                        <?php if (Auth::user()->role==1){?>
-                            <x-nav-link :href="route('admin')" :active="request()->routeIs('admin')">
+                        @if (Auth::user()->role == 1)
+                            <x-nav-link :href="route('index')" :active="request()->routeIs('index')">
                                 Admin
                             </x-nav-link>
-                        <?php } ?>                                                  
+                        @endif
                     @endauth
                 </div>
             </div>
