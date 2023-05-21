@@ -72,4 +72,5 @@ Route::get('/pizza-orders', [ChartController::class, 'pizzaOrders'])->name('pizz
 use App\Http\Controllers\ForumController;
 
 Route::get('/forum', [ForumController::class, 'index'])->name('forum');
+Route::get('/forum', [ForumController::class, 'index'])->name('forum.index');
 Route::post('/forum', [ForumController::class, 'store'])->name('forum.store');
